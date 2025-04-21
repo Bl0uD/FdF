@@ -6,10 +6,10 @@ SRC = \
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -I/usr/include -I./includes -Imlx_linux -Ift -O3 -g -c $< -o $@
+	$(CC) -Wall -Wextra -I/usr/include -I./includes -Imlx_linux -Ift -O3 -g -fsanitize=address -c $< -o $@
 
 $(NAME): $(OBJ) libft
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./lib -lft -g -o $(NAME)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./lib -lft -g -fsanitize=address -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
