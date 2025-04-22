@@ -49,6 +49,7 @@ typedef struct s_fdf
 	void			*win;
 	t_point			**tab;
 	float			zoom;
+	float			rotate;
 	int				row;
 	int				col;
 	t_img			*img;

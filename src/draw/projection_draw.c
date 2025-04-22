@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:55:08 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 02:34:12 by jdupuis          ###   ########.fr       */
+/*   Updated: 2025/04/22 12:36:17 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_point	projection_iso(t_fdf *fdf, int i, int j)
 	scaled_y = fdf->tab[i][j].origin_y * fdf->zoom;
 	scaled_z = fdf->tab[i][j].origin_z * fdf->zoom;
 	point.draw_x = (scaled_x - scaled_y) * cos(0.523599);
-	point.draw_y = -scaled_z + (scaled_x + scaled_y) * sin(0.523599);
+	point.draw_y = -scaled_z + (scaled_x + scaled_y) * sin(fdf->rotate);
 	point.draw_z = scaled_z;
 	point.color = fdf->tab[i][j].color;
 	return (point);

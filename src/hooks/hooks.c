@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 19:24:21 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 02:34:23 by jdupuis          ###   ########.fr       */
+/*   Updated: 2025/04/22 12:38:36 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,27 @@ void	keyboard_projection(t_fdf *fdf, int keycode)
 	}
 }
 
+void	keyboard_rotation(t_fdf *fdf, int keycode)
+{
+	if (keycode == 65361)
+	{
+		fdf->rotate -= 0.05;
+		calculate_draw(fdf, fdf->proj);
+		ft_display(fdf);
+	}
+	if (keycode == 65363)
+	{
+		fdf->rotate += 0.05;
+		calculate_draw(fdf, fdf->proj);
+		ft_display(fdf);
+	}
+}
+
 int	key_hook(int keycode, t_fdf *fdf)
 {
 	keyboard_movement(fdf, keycode);
 	keyboard_projection(fdf, keycode);
+	keyboard_rotation(fdf, keycode);
 	if (keycode == 65307)
 	{
 		ft_exit(fdf);
