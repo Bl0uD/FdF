@@ -20,21 +20,21 @@ OBJ = $(SRC:.c=.o)
 	$(CC) -Wall -Wextra -Werror -I/usr/include -I./includes -Imlx_linux -Ift -O3 -c $< -o $@
 
 $(NAME): $(OBJ) libft
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./libs -lft -o $(NAME)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./libs/LibFT -lft -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
-	make -C ./libs fclean
+	make -C ./libs/LibFT/ fclean
 
 re: fclean all
 
 all: $(NAME)
 
 libft:
-	make -C ./libs
+	make -C ./libs/LibFT/
 
 dev :
 	make fclean
