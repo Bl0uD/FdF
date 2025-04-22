@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
+/*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 02:28:30 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 02:28:30 by jdupuis          ###   ########.fr       */
+/*   Created: 2024/11/05 17:45:32 by samberna          #+#    #+#             */
+/*   Updated: 2024/11/07 17:31:40 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

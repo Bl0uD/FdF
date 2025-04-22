@@ -1,31 +1,40 @@
-NAME=fdf
+NAME = fdf
 CC = cc
 SRC = \
 	./src/main.c \
+	./src/draw/calculate_draw.c \
+	./src/draw/draw.c \
+	./src/draw/mlx_draw.c \
+	./src/draw/project_draw_opti.c \
+	./src/draw/projection_draw.c \
+	./src/get_next_line/get_next_line_utils.c \
+	./src/get_next_line/get_next_line.c \
+	./src/hooks/hooks.c \
+	./src/initialization/init.c \
+	./src/initialization/parse.c \
+	./src/utils/utils.c \
 
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
-	$(CC) -Wall -Wextra -I/usr/include -I./includes -Imlx_linux -Ift -O3 -g -fsanitize=address -c $< -o $@
+	$(CC) -Wall -Wextra -Werror -I/usr/include -I./includes -Imlx_linux -Ift -O3 -c $< -o $@
 
 $(NAME): $(OBJ) libft
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./lib -lft -g -fsanitize=address -o $(NAME)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -Ift -lXext -lX11 -lm -lz -L./libs -lft -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
-	rm -rf ./lib/libft.a
-	make -C ./lib/LibFT fclean
+	make -C ./libs fclean
 
 re: fclean all
 
 all: $(NAME)
 
 libft:
-	make -C ./lib/LibFT
-	cp ./lib/LibFT/libft.a ./lib/libft.a
+	make -C ./libs
 
 dev :
 	make fclean
