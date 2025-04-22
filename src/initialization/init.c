@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:31:21 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 12:27:48 by jdupuis          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:55:03 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	init_fdf(t_fdf *fdf)
 	fdf->move_x = 0;
 	fdf->move_y = 0;
 	fdf->proj = ISOMETRIC;
-	fdf->rotate = 0.523599;
+	fdf->rotate_h = 0.523599;
+	fdf->rotate_v = 0.523599;
 }

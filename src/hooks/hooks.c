@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 19:24:21 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 12:38:36 by jdupuis          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:59:38 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,25 @@ void	keyboard_rotation(t_fdf *fdf, int keycode)
 {
 	if (keycode == 65361)
 	{
-		fdf->rotate -= 0.05;
+		fdf->rotate_h -= 0.05;
 		calculate_draw(fdf, fdf->proj);
 		ft_display(fdf);
 	}
 	if (keycode == 65363)
 	{
-		fdf->rotate += 0.05;
+		fdf->rotate_h += 0.05;
+		calculate_draw(fdf, fdf->proj);
+		ft_display(fdf);
+	}
+	if (keycode == 97)
+	{
+		fdf->rotate_v -= 0.00;
+		calculate_draw(fdf, fdf->proj);
+		ft_display(fdf);
+	}
+	if (keycode == 101)
+	{
+		fdf->rotate_v += 0.00;
 		calculate_draw(fdf, fdf->proj);
 		ft_display(fdf);
 	}

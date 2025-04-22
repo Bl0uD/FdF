@@ -6,7 +6,7 @@
 /*   By: jdupuis <jdupuis@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 20:45:52 by jdupuis           #+#    #+#             */
-/*   Updated: 2025/04/22 12:36:29 by jdupuis          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:55:32 by jdupuis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ void	projection_iso_opti(t_fdf *fdf)
 			s.sx = fdf->tab[s.i][s.j].origin_x * fdf->zoom;
 			s.sy = fdf->tab[s.i][s.j].origin_y * fdf->zoom;
 			s.sz = fdf->tab[s.i][s.j].origin_z * fdf->zoom;
-			fdf->tab[s.i][s.j].draw_x = ((s.sx - s.sy) * cos(0.523599));
+			fdf->tab[s.i][s.j].draw_x = ((s.sx - s.sy) * cos(fdf->rotate_v));
 			fdf->tab[s.i][s.j].draw_x += offset_x + fdf->move_x;
-			fdf->tab[s.i][s.j].draw_y = (-s.sz + (s.sx + s.sy) * sin(fdf->rotate));
+			fdf->tab[s.i][s.j].draw_y = (-s.sz + (s.sx + s.sy) * sin(fdf->rotate_h));
 			fdf->tab[s.i][s.j].draw_y += offset_y + fdf->move_y;
 			fdf->tab[s.i][s.j].draw_z = s.sz;
 			s.j++;
